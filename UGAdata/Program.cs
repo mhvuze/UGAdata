@@ -94,11 +94,11 @@ namespace UGAdata
                 // Read from file info table
                 int unk1 = br_input.ReadInt32();
                 int size = br_input.ReadInt32();
-                int file_offset = br_input.ReadInt32();
+                UInt32 file_offset = br_input.ReadUInt32();
 
                 // Read from file name pointer table
                 br_input.BaseStream.Seek(name_pt_offset + (i * 4), SeekOrigin.Begin);
-                int name_offset = br_input.ReadInt32();
+                UInt32 name_offset = br_input.ReadUInt32();
 
                 // Read from file name table
                 br_input.BaseStream.Seek(name_offset, SeekOrigin.Begin);
